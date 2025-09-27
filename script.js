@@ -32,6 +32,4 @@ function recordWorkout(){
     localStorage.setItem("repetitionsList", JSON.stringify(repetitionsList));
     localStorage.setItem("weightList", JSON.stringify(weightList));
 
-    console.log(`Exercise: ${exercise}, Sets: ${sets}, Repetitions: ${repetitions}, Weight: ${weight}`);
-    console.log(setsList);
 }
