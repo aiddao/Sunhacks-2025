@@ -32,6 +32,7 @@ function recordWorkout(){
     localStorage.setItem("repetitionsList", JSON.stringify(repetitionsList));
     localStorage.setItem("weightList", JSON.stringify(weightList));
 
+    clearWorkoutForm();
 }
 
 function addWorkoutToLog(exercise, sets, repetitions, weight) {
@@ -51,4 +52,11 @@ function clearWorkoutLog() {
     localStorage.removeItem("repetitionsList");
     localStorage.removeItem("weightList");
     document.getElementById("workout-log").innerHTML = "";
+}
+
+function clearWorkoutForm() {
+    document.getElementById("exercise").value = "";
+    document.getElementById("sets").value = "";
+    document.getElementById("repetitions").value = "";
+    document.getElementById("weight").value = "";
 }
