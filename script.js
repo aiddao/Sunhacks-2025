@@ -3,17 +3,14 @@ const setsList = [];
 const repetitionsList = [];
 const weightList = [];
 
-if(localStorage.exerciseList) {
+if(localStorage.exerciseList && localStorage.setsList && localStorage.repetitionsList && localStorage.weightList) {
     exerciseList.push(...JSON.parse(localStorage.exerciseList));
-}
-if(localStorage.setsList) {
     setsList.push(...JSON.parse(localStorage.setsList));
-}
-if(localStorage.repetitionsList) {
     repetitionsList.push(...JSON.parse(localStorage.repetitionsList));
-}
-if(localStorage.weightList) {
     weightList.push(...JSON.parse(localStorage.weightList));
+    for(let i = 0; i < exerciseList.length; i++) {
+        addWorkoutToLog(exerciseList[i], setsList[i], repetitionsList[i], weightList[i]);
+    }
 }
 
 function recordWorkout(){
@@ -32,4 +29,11 @@ function recordWorkout(){
     localStorage.setItem("repetitionsList", JSON.stringify(repetitionsList));
     localStorage.setItem("weightList", JSON.stringify(weightList));
 
+}
+
+function addWorkoutToLog(exercise, sets, repetitions, weight) {
+    let workoutList = document.getElementById("workout-list");
+    let listItem = document.createElement("li");
+    listItem.textContent = `${exercise}: ${sets} sets, ${repetitions} reps, ${weight} kg`;
+    workoutList.appendChild(listItem);
 }
