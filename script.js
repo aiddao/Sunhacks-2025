@@ -24,6 +24,9 @@ function recordWorkout(){
     setsList.push(sets);
     repetitionsList.push(repetitions);
     weightList.push(weight);
+
+    addWorkoutToLog(exercise, sets, repetitions, weight);
+    
     localStorage.setItem("exerciseList", JSON.stringify(exerciseList));
     localStorage.setItem("setsList", JSON.stringify(setsList));
     localStorage.setItem("repetitionsList", JSON.stringify(repetitionsList));
