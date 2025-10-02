@@ -3,7 +3,7 @@ const setsList = [];
 const repetitionsList = [];
 const weightList = [];
 
-if(localStorage.exerciseList && localStorage.setsList && localStorage.repetitionsList && localStorage.weightList) {
+if(localStorage.exerciseList != null && localStorage.setsList != null && localStorage.repetitionsList != null && localStorage.weightList != null) {
     exerciseList.push(...JSON.parse(localStorage.exerciseList));
     setsList.push(...JSON.parse(localStorage.setsList));
     repetitionsList.push(...JSON.parse(localStorage.repetitionsList));
@@ -26,7 +26,7 @@ function recordWorkout(){
     weightList.push(weight);
 
     addWorkoutToLog(exercise, sets, repetitions, weight);
-    
+
     localStorage.setItem("exerciseList", JSON.stringify(exerciseList));
     localStorage.setItem("setsList", JSON.stringify(setsList));
     localStorage.setItem("repetitionsList", JSON.stringify(repetitionsList));
