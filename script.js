@@ -40,3 +40,15 @@ function addWorkoutToLog(exercise, sets, repetitions, weight) {
     listItem.textContent = `${exercise}: ${sets} sets, ${repetitions} reps, ${weight} kg`;
     workoutList.appendChild(listItem);
 }
+
+function clearWorkoutLog() {
+    exerciseList.length = 0;
+    setsList.length = 0;
+    repetitionsList.length = 0;
+    weightList.length = 0;
+    localStorage.removeItem("exerciseList");
+    localStorage.removeItem("setsList");
+    localStorage.removeItem("repetitionsList");
+    localStorage.removeItem("weightList");
+    document.getElementById("workout-log").innerHTML = "";
+}
